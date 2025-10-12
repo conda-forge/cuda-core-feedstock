@@ -501,6 +501,7 @@ Feedstock Maintainers
 =====================
 
 * [@bdice](https://github.com/bdice/)
+* [@conda-forge/cuda-python](https://github.com/orgs/conda-forge/teams/cuda-python/)
 * [@kkraus14](https://github.com/kkraus14/)
 * [@leofang](https://github.com/leofang/)
 
