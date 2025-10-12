@@ -500,6 +500,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bdice](https://github.com/bdice/)
 * [@kkraus14](https://github.com/kkraus14/)
 * [@leofang](https://github.com/leofang/)
 
