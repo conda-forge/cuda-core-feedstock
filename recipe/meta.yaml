@@ -54,7 +54,7 @@ requirements:
 
 test:
   commands:
-    - python -c "from cuda.core.experimental import Device, Buffer, utils"
+    - python -c "from cuda.core.experimental import Device, Buffer, utils; print('ok')"
 
 about:
   home: https://nvidia.github.io/cuda-python/cuda-core
