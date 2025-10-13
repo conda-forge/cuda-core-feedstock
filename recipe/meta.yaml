@@ -22,6 +22,10 @@ build:
   number: {{ number }}
   string: cuda{{ cuda_major_version }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   skip: true  # [py < 39 or ppc64le or osx]
+  # Work around https://github.com/conda-forge/cross-python-feedstock/issues/100.
+  # We could've kept aarch64 + py313t, but for some reason this fails with CUDA 12 (CUDA 13
+  # is fine), and a finer-grained skip condition is not honored for whatever reason...
+  skip: true  # [aarch64 and is_freethreading]
   script_env:
     - CUDA_PATH={{ PREFIX ~ subdir }}
 
@@ -50,7 +54,7 @@ requirements:
 
 test:
   commands:
-    - python -c "from cuda.core.experimental import Device, Buffer, utils"
+    - python -c "from cuda.core.experimental import Device, Buffer, utils; print('ok')"
 
 about:
   home: https://nvidia.github.io/cuda-python/cuda-core
@@ -67,5 +71,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/cuda-python
+    - bdice
     - leofang
     - kkraus14
