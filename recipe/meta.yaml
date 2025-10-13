@@ -50,8 +50,10 @@ requirements:
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 
 test:
-  commands:
-    - python -c "from cuda.core.experimental import Device, Buffer, utils"
+  imports:
+    - cuda.core.experimental.Device
+    - cuda.core.experimental.Buffer
+    - cuda.core.experimental.utils
 
 about:
   home: https://nvidia.github.io/cuda-python/cuda-core
