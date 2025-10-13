@@ -21,8 +21,11 @@ source:
 build:
   number: {{ number }}
   string: cuda{{ cuda_major_version }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
-  # work around https://github.com/conda-forge/cross-python-feedstock/issues/100
-  skip: true  # [py < 39 or ppc64le or osx or (aarch64 and py==314 and is_freethreading)]
+  skip: true  # [py < 39 or ppc64le or osx]
+  # Work around https://github.com/conda-forge/cross-python-feedstock/issues/100.
+  # We could've kept aarch64 + py313t, but for some reason this fails with CUDA 12 (CUDA 13
+  # is fine), and a finer-grained skip condition is not honored for whatever reason...
+  skip: true  # [aarch64 and is_freethreading]
   script_env:
     - CUDA_PATH={{ PREFIX ~ subdir }}
 
