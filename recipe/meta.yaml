@@ -1,5 +1,5 @@
 {% set name = "cuda-core" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 {% set number = 0 %}
 {% set is_freethreading = environ.get("is_freethreading", False) %}
 
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/{{ name }}-v{{ version }}/cuda-python-{{ name }}-v{{ version }}.tar.gz
-  sha256: 47a6181f1a8fa1db2df31251c0bb654558b3eddf47c41964bfa39965a46c7b41
+  sha256: f34191d74d590f633b31e7e71dbf013fb2ce7c9a37dec1bc7ae6cad26b3fa045
 
 build:
   number: {{ number }}
