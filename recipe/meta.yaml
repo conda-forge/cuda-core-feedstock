@@ -21,7 +21,7 @@ source:
 build:
   number: {{ number }}
   string: cuda{{ cuda_major_version }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
-  skip: true  # [py < 39 or ppc64le or osx]
+  skip: true  # [py < 310 oppc64le or osx]
   script_env:
     - CUDA_PATH={{ PREFIX ~ subdir }}
 
