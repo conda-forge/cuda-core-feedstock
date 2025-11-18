@@ -23,12 +23,6 @@ jobs:
       win_64_cuda_major_version12is_freethreadingfalsepython3.14.____cp314:
         CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
-      win_64_cuda_major_version12is_freethreadingfalsepython3.9.____cpython:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_cuda_major_version12is_freethreadingtruepython3.13.____cp313t:
-        CONFIG: win_64_cuda_major_version12is_freethreadingtruepython3.13.____cp313t
-        UPLOAD_PACKAGES: 'True'
       win_64_cuda_major_version12is_freethreadingtruepython3.14.____cp314t:
         CONFIG: win_64_cuda_major_version12is_freethreadingtruepython3.14.____cp314t
         UPLOAD_PACKAGES: 'True'
@@ -46,12 +40,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_cuda_major_version13is_freethreadingfalsepython3.14.____cp314:
         CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
-      win_64_cuda_major_version13is_freethreadingfalsepython3.9.____cpython:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_cuda_major_version13is_freethreadingtruepython3.13.____cp313t:
-        CONFIG: win_64_cuda_major_version13is_freethreadingtruepython3.13.____cp313t
         UPLOAD_PACKAGES: 'True'
       win_64_cuda_major_version13is_freethreadingtruepython3.14.____cp314t:
         CONFIG: win_64_cuda_major_version13is_freethreadingtruepython3.14.____cp314t
