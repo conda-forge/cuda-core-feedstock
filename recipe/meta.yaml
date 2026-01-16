@@ -24,6 +24,10 @@ build:
   skip: true  # [py < 310 or ppc64le or osx]
   script_env:
     - CUDA_PATH={{ PREFIX ~ subdir }}
+  ignore_run_exports_from:
+    - cuda-cudart-dev
+  ignore_run_exports:
+    - cuda-version
 
 requirements:
   build:
