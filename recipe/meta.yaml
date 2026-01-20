@@ -49,9 +49,9 @@ requirements:
   run:
     - python
     - numpy
+    - cuda-cudart
     - {{ pin_compatible("cuda-bindings", min_pin="x", max_pin="x") }}
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
-    - {{ pin_compatible("cuda-cudart", min_pin="x", max_pin="x") }}
 
 test:
   commands:
