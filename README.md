@@ -7,7 +7,7 @@ Home: https://nvidia.github.io/cuda-python/cuda-core
 
 Package license: [Apache-2.0](https://github.com/NVIDIA/cuda-python/blob/main/cuda_core/LICENSE)
 
-Summary: cuda.core: (experimental) pythonic CUDA module
+Summary: cuda.core: pythonic CUDA module
 
 Development: https://github.com/NVIDIA/cuda-python
 
