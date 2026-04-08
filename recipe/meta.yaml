@@ -50,6 +50,7 @@ requirements:
   run:
     - python
     - numpy
+    - cuda-pathfinder >=1.4.2,<2
     - {{ pin_compatible("cuda-bindings", min_pin="x", max_pin="x") }}
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 
