@@ -24,6 +24,9 @@ build:
   skip: true  # [py < 310 or ppc64le or osx]
   script_env:
     - CUDA_PATH={{ PREFIX ~ subdir }}
+  missing_dso_whitelist:
+    - "*/torch_cpu.dll"      # [win]
+    - "*/torch_python.dll"   # [win]
   ignore_run_exports_from:
     - cuda-cudart-dev
     - cuda-nvrtc-dev
@@ -51,6 +54,7 @@ requirements:
     - python
     - numpy
     - cuda-pathfinder >=1.4.2,<2
+    - backports.strenum  # [py < 311]
     - {{ pin_compatible("cuda-bindings", min_pin="x", max_pin="x") }}
     - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x") }}
 
