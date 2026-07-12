@@ -20,7 +20,6 @@ build:
   string: cuda${{ cuda_major_version }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   skip: match(python, "<3.10") or ppc64le or osx
   script:
-    file: ${{ "build.bat" if win else "build.sh" }}
     env:
       SUBDIR: ${{ subdir }}
   dynamic_linking:
@@ -71,8 +70,6 @@ tests:
 about:
   license: Apache-2.0
   license_file: cuda_core/LICENSE
-  # The v1 recipe format has no `license_url` field; the license text lives at
-  # https://github.com/NVIDIA/cuda-python/blob/main/cuda_core/LICENSE
   summary: "cuda.core: pythonic CUDA module"
   description: |
     cuda.core bridges Python's productivity with CUDA's performance through intuitive and pythonic APIs.
