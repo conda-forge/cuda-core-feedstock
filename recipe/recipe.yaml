@@ -1,0 +1,90 @@
+schema_version: 1
+
+context:
+  name: cuda-core
+  version: "1.1.0"
+  number: 0
+  target_name: ${{ "x64" if win else ("sbsa-linux" if aarch64 else "x86_64-linux") }}
+  subdir: ${{ "\\Library" if win else "/targets/" ~ target_name }}
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/NVIDIA/cuda-python/releases/download/${{ name }}-v${{ version }}/cuda-python-${{ name }}-v${{ version }}.tar.gz
+  sha256: 72aa0c24081242ce14d1aae0a41759ee92f82f6b716ceb9278201de091f93c3d
+
+build:
+  number: ${{ number }}
+  string: cuda${{ cuda_major_version }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
+  skip: match(python, "<3.10") or ppc64le or osx
+  script:
+    file: ${{ "build.bat" if win else "build.sh" }}
+    env:
+      SUBDIR: ${{ subdir }}
+  dynamic_linking:
+    missing_dso_allowlist:
+      - if: win
+        then:
+          - "*/torch_cpu.dll"
+          - "*/torch_python.dll"
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - if: build_platform != target_platform
+      then:
+        - cross-python_${{ target_platform }}
+        - python
+        - cython
+  host:
+    - cython
+    - pip
+    - python
+    - setuptools
+    - setuptools-scm >=8
+    - cuda-cudart-dev
+    - cuda-nvrtc-dev
+    - cuda-profiler-api
+    - cuda-bindings ${{ cuda_major_version }}.*
+    - cuda-version ${{ cuda_major_version }}.*
+  run:
+    - python
+    - numpy
+    - cuda-pathfinder >=1.4.2,<2
+    - if: match(python, "<3.11")
+      then: backports.strenum
+    - ${{ pin_compatible("cuda-bindings", lower_bound="x", upper_bound="x") }}
+    - ${{ pin_compatible("cuda-version", lower_bound="x", upper_bound="x") }}
+  ignore_run_exports:
+    from_package:
+      - cuda-cudart-dev
+      - cuda-nvrtc-dev
+
+tests:
+  - script:
+      - python -c "from cuda.core import Device, Buffer, utils; print('ok')"
+
+about:
+  license: Apache-2.0
+  license_file: cuda_core/LICENSE
+  # The v1 recipe format has no `license_url` field; the license text lives at
+  # https://github.com/NVIDIA/cuda-python/blob/main/cuda_core/LICENSE
+  summary: "cuda.core: pythonic CUDA module"
+  description: |
+    cuda.core bridges Python's productivity with CUDA's performance through intuitive and pythonic APIs.
+    The mission is to provide users full access to all of the core CUDA features in Python, such as
+    runtime control, compiler and linker.
+  homepage: https://nvidia.github.io/cuda-python/cuda-core
+  repository: https://github.com/NVIDIA/cuda-python
+  documentation: https://nvidia.github.io/cuda-python/cuda-core
+
+extra:
+  recipe-maintainers:
+    - conda-forge/cuda-python
+    - bdice
+    - leofang
+    - kkraus14
