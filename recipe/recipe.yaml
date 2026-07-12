@@ -20,6 +20,8 @@ build:
   string: cuda${{ cuda_major_version }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   skip: match(python, "<3.10") or ppc64le or osx
   script:
+    # keep `file` explicit: a script mapping without file/content is invalid per the recipe-format schema
+    file: ${{ "build.bat" if win else "build.sh" }}
     env:
       SUBDIR: ${{ subdir }}
   dynamic_linking:
