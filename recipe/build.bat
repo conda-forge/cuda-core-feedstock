@@ -1,4 +1,4 @@
-set "CUDA_PATH=%PREFIX%%SUBDIR%"
+set "CUDA_PATH=%PREFIX%\%SUBDIR%"
 
 set DIR_NAME=%PKG_NAME:-=_%
 cd %DIR_NAME%

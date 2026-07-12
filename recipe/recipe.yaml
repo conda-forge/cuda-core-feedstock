@@ -4,8 +4,8 @@ context:
   name: cuda-core
   version: "1.1.0"
   number: 1
-  target_name: ${{ "x64" if win else ("sbsa-linux" if aarch64 else "x86_64-linux") }}
-  subdir: ${{ "\\Library" if win else "/targets/" ~ target_name }}
+  target_name: ${{ "sbsa-linux" if aarch64 else 'x86_64-linux' if linux else "x64" if win else "" }}
+  subdir: ${{ "targets/" ~ target_name if aarch64 or linux else "Library\\" if win else "" }}
 
 package:
   name: ${{ name|lower }}
