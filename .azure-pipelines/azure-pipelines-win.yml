@@ -8,8 +8,8 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_cuda_major_version12is_freethreadingfalsepython3.10.____cpython:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.10.____cpython
+      win_64_cuda_major_version12python3.10.____cpython:
+        CONFIG: win_64_cuda_major_version12python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -17,8 +17,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version12is_freethreadingfalsepython3.11.____cpython:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.11.____cpython
+      win_64_cuda_major_version12python3.11.____cpython:
+        CONFIG: win_64_cuda_major_version12python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -26,8 +26,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version12is_freethreadingfalsepython3.12.____cpython:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.12.____cpython
+      win_64_cuda_major_version12python3.12.____cpython:
+        CONFIG: win_64_cuda_major_version12python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -35,8 +35,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version12is_freethreadingfalsepython3.13.____cp313:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.13.____cp313
+      win_64_cuda_major_version12python3.13.____cp313:
+        CONFIG: win_64_cuda_major_version12python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -44,8 +44,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version12is_freethreadingfalsepython3.14.____cp314:
-        CONFIG: win_64_cuda_major_version12is_freethreadingfalsepython3.14.____cp314
+      win_64_cuda_major_version12python3.14.____cp314:
+        CONFIG: win_64_cuda_major_version12python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -53,8 +53,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version12is_freethreadingtruepython3.14.____cp314t:
-        CONFIG: win_64_cuda_major_version12is_freethreadingtruepython3.14.____cp314t
+      win_64_cuda_major_version12python3.14.____cp314t:
+        CONFIG: win_64_cuda_major_version12python3.14.____cp314t
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -62,8 +62,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingfalsepython3.10.____cpython:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.10.____cpython
+      win_64_cuda_major_version13python3.10.____cpython:
+        CONFIG: win_64_cuda_major_version13python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -71,8 +71,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingfalsepython3.11.____cpython:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.11.____cpython
+      win_64_cuda_major_version13python3.11.____cpython:
+        CONFIG: win_64_cuda_major_version13python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -80,8 +80,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingfalsepython3.12.____cpython:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.12.____cpython
+      win_64_cuda_major_version13python3.12.____cpython:
+        CONFIG: win_64_cuda_major_version13python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -89,8 +89,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingfalsepython3.13.____cp313:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.13.____cp313
+      win_64_cuda_major_version13python3.13.____cp313:
+        CONFIG: win_64_cuda_major_version13python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -98,8 +98,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingfalsepython3.14.____cp314:
-        CONFIG: win_64_cuda_major_version13is_freethreadingfalsepython3.14.____cp314
+      win_64_cuda_major_version13python3.14.____cp314:
+        CONFIG: win_64_cuda_major_version13python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
@@ -107,8 +107,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: D:\Miniforge
-      win_64_cuda_major_version13is_freethreadingtruepython3.14.____cp314t:
-        CONFIG: win_64_cuda_major_version13is_freethreadingtruepython3.14.____cp314t
+      win_64_cuda_major_version13python3.14.____cp314t:
+        CONFIG: win_64_cuda_major_version13python3.14.____cp314t
         UPLOAD_PACKAGES: 'True'
         build_workspace_dir: D:\\bld\\
         free_disk_space: skip
