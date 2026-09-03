@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: cuda-core
-  version: "1.1.0"
-  number: 1
+  version: "1.2.0"
+  number: 0
   target_name: ${{ "sbsa-linux" if aarch64 else 'x86_64-linux' if linux else "x64" if win else "" }}
   subdir: ${{ "targets/" ~ target_name if aarch64 or linux else "Library\\" if win else "" }}
 
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/${{ name }}-v${{ version }}/cuda-python-${{ name }}-v${{ version }}.tar.gz
-  sha256: 72aa0c24081242ce14d1aae0a41759ee92f82f6b716ceb9278201de091f93c3d
+  sha256: 99f4d3054e27ce870b39b3cecc824729cf39bf3718b16d450f03d439401eaec5
 
 build:
   number: ${{ number }}
@@ -40,9 +40,9 @@ requirements:
       then:
         - cross-python_${{ target_platform }}
         - python
-        - cython
+        - cython >=3.2.5,<3.3
   host:
-    - cython
+    - cython >=3.2.5,<3.3
     - pip
     - python
     - setuptools
