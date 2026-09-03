@@ -40,9 +40,9 @@ requirements:
       then:
         - cross-python_${{ target_platform }}
         - python
-        - cython
+        - cython >=3.2.5,<3.3
   host:
-    - cython
+    - cython >=3.2.5,<3.3
     - pip
     - python
     - setuptools
