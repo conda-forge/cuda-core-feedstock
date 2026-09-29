@@ -19,7 +19,8 @@ build:
   number: ${{ number }}
   string: cuda${{ cuda_major_version }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   # conda-forge does not ship CPython builds for win-arm64 until PY314
-  skip: match(python, "<3.10") or ppc64le or osx or (match(python, "<3.14") and win and arm64) 
+  # CUDA 12 does not support WoA
+  skip: match(python, "<3.10") or ppc64le or osx or (win and arm64 and (match(python, "<3.14") or cuda_major_version == "12"))
   script:
     # keep `file` explicit: a script mapping without file/content is invalid per the recipe-format schema
     file: ${{ "build.bat" if win else "build.sh" }}
