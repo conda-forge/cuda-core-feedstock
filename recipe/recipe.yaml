@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: cuda-core
-  version: "1.2.1"
-  number: 1
+  version: "1.2.2"
+  number: 0
   target_name: ${{ "sbsa-linux" if aarch64 else 'x86_64-linux' if linux else "arm64" if win and arm64 else "x64" if win else "" }}
   subdir: ${{ "targets/" ~ target_name if aarch64 or linux else "Library\\" if win else "" }}
 
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://github.com/NVIDIA/cuda-python/releases/download/${{ name }}-v${{ version }}/cuda-python-${{ name }}-v${{ version }}.tar.gz
-  sha256: 6adaaf5a73dcea412ef2766131270126609ae1cbd79644e9e04b38f9c08c2336
+  sha256: 5eea9467ceb3adea470c104cd4497420a75367880d8d6fd5223b6b279aa492ac
 
 build:
   number: ${{ number }}
