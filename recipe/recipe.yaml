@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: cuda-core
   version: "1.2.2"
-  number: 0
+  number: 1
   target_name: ${{ "sbsa-linux" if aarch64 else 'x86_64-linux' if linux else "arm64" if win and arm64 else "x64" if win else "" }}
   subdir: ${{ "targets/" ~ target_name if aarch64 or linux else "Library\\" if win else "" }}
 
