@@ -69,6 +69,8 @@ requirements:
       else:
         - cuda-bindings 13.5.*
         - cuda-version 13.5.*
+        # CUDA 13 moved crt/host_defines.h, which cuda_runtime_api.h includes, out of cuda-cudart-dev.
+        - cuda-crt-dev_${{ target_platform }}
   run:
     - python
     - numpy
