@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: cuda-core
   version: "1.3.0"
-  number: 0
+  number: 1
   # The pinned CCCL submodule commit of cuda_core/third_party/cccl at the release tag.
   cccl_commit: ba8eb88fb78254a07112e60d4e74cac84038fac8
   target_name: ${{ "sbsa-linux" if aarch64 else 'x86_64-linux' if linux else "arm64" if win and arm64 else "x64" if win else "" }}
